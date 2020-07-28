@@ -1,0 +1,32 @@
+<mat-toolbar color="primary">
+    <a routerLink="/">
+      <img src="assets/images/logo.jpg">
+    </a>
+    <h1> theGreatestRoss </h1>
+
+  <span class="spacer"></span>
+  <ul>
+    <li>
+      <a mat-button mat-ripple [matRippleUnbounded]=true routerLink="/aboutme" routerLinkActive="mat-accent">About Me</a>
+    </li>
+    <li>
+      <a mat-button mat-ripple routerLink="/" routerLinkActive="mat-accent">Sample Database</a>
+    </li>
+    <li>
+      <a mat-button mat-ripple routerLink="/portfolio" routerLinkActive="mat-accent">Portfolio</a>
+    </li>
+    <li *ngIf="userIsAuthenticated">
+      <a mat-button mat-ripple routerLink="/create" routerLinkActive="mat-accent">New Post</a>
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a mat-button mat-ripple routerLink="/auth/login" routerLinkActive="mat-accent">Login</a>
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a mat-button mat-ripple routerLink="/auth/signup" routerLinkActive="mat-accent">Sign Up</a>
+    </li>
+
+    <li *ngIf="userIsAuthenticated">
+      <button mat-button mat-ripple (click)="onLogout()">Logout</button>
+    </li>
+  </ul>
+</mat-toolbar>

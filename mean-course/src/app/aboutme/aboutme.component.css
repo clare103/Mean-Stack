@@ -1,0 +1,10 @@
+.example-card {
+  max-width: 500px;
+  margin: auto;
+}
+
+.example-header-image {
+  background-image: url('src/assets/images/selfie.jpg');
+  background-size: cover;
+}
+
